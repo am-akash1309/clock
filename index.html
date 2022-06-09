@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Clock</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="clock.css">
+        <style>
+            :root {
+            --hourangle: rotate(300deg);
+            --minangle: rotate(12deg);
+            --secangle: rotate(0deg);
+            }
+            #hourhand{
+                transform: var(--hourangle)
+            }
+            #minhand{
+                transform: var(--minangle)
+            }
+            #sechand{
+                transform: var(--secangle)
+            }
+        </style>
+    </head>
+    <body class="container">
+        <div id="date" class="center"></div>
+        <div id="time" class="center"></div>
+
+        <div class="clock circle">
+            <div class="hour">
+                <div class="hourhand" id="hourhand"></div>
+            </div>
+            <div class="minute">
+                <div class="minhand" id="minhand"></div>
+            </div>
+            <div class="second">
+                <div class="sechand" id="sechand"></div>
+            </div>
+        </div>
+
+
+        <script src="clock.js"></script>
+        <script>
+            function result(){
+            console.log(a, b, c)
+            getComputedStyle(document.documentElement).getPropertyValue('--hourangle')
+            getComputedStyle(document.documentElement).getPropertyValue('--minangle')
+            getComputedStyle(document.documentElement).getPropertyValue('--secangle')
+            document.documentElement.style.setProperty('--hourangle', a)
+            document.documentElement.style.setProperty('--minangle', b)
+            document.documentElement.style.setProperty('--secangle', c)
+            setTimeout(function(){ 
+            result() 
+            }, 1000)
+            }
+            result()
+        </script>
+    
+    </body>
+</html>
